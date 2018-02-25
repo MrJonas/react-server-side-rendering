@@ -1,4 +1,4 @@
-# React Starter Project
+# React Server side rendering example
 
 Features: 
 
