@@ -39,9 +39,7 @@ app.get("*", (req, res, next) => {
       );
 
       const initialData = store.getState();
-      console.log(initialData)
-      res.send(`
-        <!DOCTYPE html>
+      res.send(`<!DOCTYPE html>
         <html>
           <head>
             <title>App</title>
@@ -49,7 +47,6 @@ app.get("*", (req, res, next) => {
             <script src="/bundle.js" defer></script>
             <script>window.__initialData__ = ${serialize(initialData)}</script>
           </head>
-
           <body>
             <div id="root">${markup}</div>
           </body>

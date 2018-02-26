@@ -21437,8 +21437,7 @@ app.get("*", function (req, res, next) {
     ));
 
     var initialData = store.getState();
-    console.log(initialData);
-    res.send("\n        <!DOCTYPE html>\n        <html>\n          <head>\n            <title>App</title>\n            <link rel=\"stylesheet\" href=\"/css/main.css\">\n            <script src=\"/bundle.js\" defer></script>\n            <script>window.__initialData__ = " + __WEBPACK_IMPORTED_MODULE_5_serialize_javascript___default()(initialData) + "</script>\n          </head>\n\n          <body>\n            <div id=\"root\">" + markup + "</div>\n          </body>\n        </html>\n      ");
+    res.send("<!DOCTYPE html>\n        <html>\n          <head>\n            <title>App</title>\n            <link rel=\"stylesheet\" href=\"/css/main.css\">\n            <script src=\"/bundle.js\" defer></script>\n            <script>window.__initialData__ = " + __WEBPACK_IMPORTED_MODULE_5_serialize_javascript___default()(initialData) + "</script>\n          </head>\n          <body>\n            <div id=\"root\">" + markup + "</div>\n          </body>\n        </html>\n      ");
   }).catch(next);
 });
 
