@@ -4,13 +4,13 @@ ADD . /opt/web-app/app
 
 WORKDIR /opt/web-app/app
 
-ENV NODE_ENV production
-
 RUN npm install
+RUN npm build
+
 
 # Expose port
 EXPOSE 3000
-
+ENV NODE_ENV production
 # Start the apa
 
 ENTRYPOINT node server.js
