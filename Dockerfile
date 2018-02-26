@@ -5,8 +5,7 @@ ADD . /opt/web-app/app
 WORKDIR /opt/web-app/app
 
 RUN npm install
-RUN npm build
-
+RUN npm run build
 
 # Expose port
 EXPOSE 3000
