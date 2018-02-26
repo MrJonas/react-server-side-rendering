@@ -6,8 +6,7 @@ WORKDIR /opt/web-app/app
 
 ENV NODE_ENV production
 
-RUN npm install
-RUN npm run build
+RUN npm install & npm run build
 
 # Expose port
 EXPOSE 3010
