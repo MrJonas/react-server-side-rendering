@@ -6,7 +6,7 @@ const browserConfig = {
   entry: "./src/browser/index.js",
   output: {
     path: __dirname,
-    filename: "./public/bundle.js"
+    filename: "./dist/bundle.js"
   },
   devtool: "cheap-module-source-map",
   module: {
@@ -15,8 +15,8 @@ const browserConfig = {
         test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: "file-loader",
         options: {
-          name: "public/media/[name].[ext]",
-          publicPath: url => url.replace(/public/, "")
+          name: "dist/media/[name].[ext]",
+          publicPath: url => url.replace(/dist/, "")
         }
       },
       {
@@ -44,7 +44,7 @@ const browserConfig = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: "public/css/[name].css"
+      filename: "dist/css/[name].css"
     })
   ]
 };
@@ -54,7 +54,7 @@ const serverConfig = {
   target: "node",
   output: {
     path: __dirname,
-    filename: "server.js",
+    filename: "dist-server/server.js",
     libraryTarget: "commonjs2"
   },
   devtool: "cheap-module-source-map",
@@ -64,8 +64,8 @@ const serverConfig = {
         test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: "file-loader",
         options: {
-          name: "public/media/[name].[ext]",
-          publicPath: url => url.replace(/public/, ""),
+          name: "dist/media/[name].[ext]",
+          publicPath: url => url.replace(/dist/, ""),
           emit: false
         }
       },

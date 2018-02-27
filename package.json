@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start-dev": "NODE_ENV=development webpack -w & NODE_ENV=development nodemon server.js",
-    "build": "NODE_ENV=production webpack -p"
+    "start:dev": "NODE_ENV=development webpack -w & NODE_ENV=development nodemon ./dist-server/server.js",
+    "clean": "rimraf dist & rimraf dist-server",
+    "build": "npm run clean & NODE_ENV=production webpack -p"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +37,7 @@
     "jest": "^22.4.2",
     "nodemon": "^1.11.0",
     "postcss-loader": "^2.0.6",
+    "rimraf": "^2.6.2",
     "webpack": "2.2.0-rc.0"
   }
 }

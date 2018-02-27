@@ -12,4 +12,4 @@ EXPOSE 3000
 ENV NODE_ENV production
 # Start the apa
 
-ENTRYPOINT node server.js
+ENTRYPOINT node dist-server/server.js
