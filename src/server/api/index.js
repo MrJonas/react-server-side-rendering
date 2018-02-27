@@ -1,31 +1,32 @@
 import express from "express"
 import {NEWS_LIST} from "./../mock.data/news.list"
+import bodyParser from 'body-parser'
 
-const api = express();
 
+var  bikeRoutesAPI = require('./BikeRoutesAPI')
+var imageApi = require('./ImagesAPI')
 
-var bodyParser = require('body-parser')
-api.use( bodyParser.json() );       // to support JSON-encoded bodies
-api.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-    extended: true,
-}));
+const api = express()
 
+api.use(bodyParser.json())
+api.use(bodyParser.urlencoded({extended: true}));
 
 let news = NEWS_LIST;
 
-
 api.get("/news", (req, res) => {
-
     res.json(news)
 })
 
 api.post("/news", (req, res) => {
-    console.log(req.body);
     if(req.body.text) {
         news.push({title: req.body.text, id: Math.random(), upvotes: 15, author: 'Jonas'})
     }
     res.json(news)
 })
+
+
+api.use('/route/', bikeRoutesAPI)
+api.use('/images/', imageApi)
 
 export default api;
 

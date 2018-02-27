@@ -20,5 +20,5 @@ deploy:
 		docker run -e "VIRTUAL_HOST=testas.dviraciumarsrutai.lt" \
 			-e "LETSENCRYPT_HOST=testas.dviraciumarsrutai.lt"  \
 			-e "LETSENCRYPT_EMAIL=jonas.l.antanaitis@gmail.com"  \
-			 --name $(CONTAINER_NAME) -d $(IMAGE_NAME) ; \
+			--name $(CONTAINER_NAME) --link mongo_instance:mongo_instance -d $(IMAGE_NAME) ; \
 		"
