@@ -25,4 +25,4 @@ app.get('/:id', function (request, response) {
     readstream.pipe(response);
 });
 
-module.exports = app;
+export default app

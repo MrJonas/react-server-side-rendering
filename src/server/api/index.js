@@ -3,8 +3,9 @@ import {NEWS_LIST} from "./../mock.data/news.list"
 import bodyParser from 'body-parser'
 
 
-var  bikeRoutesAPI = require('./BikeRoutesAPI')
-var imageApi = require('./ImagesAPI')
+import bikeRoutesAPI from './BikeRoutesAPI';
+import imageApi from './ImagesAPI';
+//var imageApi = require('./ImagesAPI')
 
 const api = express()
 
@@ -26,7 +27,7 @@ api.post("/news", (req, res) => {
 
 
 api.use('/route/', bikeRoutesAPI)
-//api.use('/images/', imageApi)
+api.use('/images/', imageApi)
 
 export default api;
 

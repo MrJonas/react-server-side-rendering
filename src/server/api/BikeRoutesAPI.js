@@ -80,4 +80,4 @@ bikeRoutesAPI.get('/:url', function (request, response) {
     });
 });
 
-module.exports = bikeRoutesAPI;
+export default bikeRoutesAPI
