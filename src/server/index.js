@@ -13,7 +13,7 @@ import api from "./api/index";
 
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static("dist"));
 
 app.use("/api", api);
 
