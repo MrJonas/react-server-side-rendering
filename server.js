@@ -49286,6 +49286,8 @@ var mapStateToProps = function mapStateToProps(state) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_fetch__ = __webpack_require__(397);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_fetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_fetch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actionTypes__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__(425);
+
 
 
 
@@ -49303,7 +49305,7 @@ var newsError = function newsError() {
 var fetchNews = function fetchNews() {
     return function (dispatch, getState) {
         dispatch(requestNews());
-        return fetch("http://localhost:3000/api/news").then(function (response) {
+        return fetch(Object(__WEBPACK_IMPORTED_MODULE_2__config__["a" /* getAppUrl */])() + "api/news").then(function (response) {
             return response.json();
         }).then(function (news) {
             return dispatch(receivedNews(news));
@@ -49319,9 +49321,8 @@ var addNewsRequest = function addNewsRequest() {
 
 var addNews = function addNews(newItem) {
     return function (dispatch, getState) {
-        console.log(newItem);
         dispatch(addNewsRequest());
-        return fetch("http://localhost:3000/api/news", {
+        return fetch(Object(__WEBPACK_IMPORTED_MODULE_2__config__["a" /* getAppUrl */])() + "api/news", {
             method: 'POST',
             body: JSON.stringify({ text: newItem }),
             headers: new Headers({
@@ -52829,6 +52830,16 @@ var NEWS_LIST = [{
     author: "Humphrey22",
     date: new Date("2017-04-14T15:30:00.000Z")
 }];
+
+/***/ }),
+/* 425 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getAppUrl; });
+var getAppUrl = function getAppUrl() {
+    return process.env.NODE_ENV === 'production' ? 'https://testas.dviraciumarsrutai.lt/' : 'http://localhost:3000/';
+};
 
 /***/ })
 /******/ ]);
