@@ -26,7 +26,7 @@ api.post("/news", (req, res) => {
 
 
 api.use('/route/', bikeRoutesAPI)
-api.use('/images/', imageApi)
+//api.use('/images/', imageApi)
 
 export default api;
 
